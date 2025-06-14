@@ -17,6 +17,7 @@ app.post('/users', async (req, res) => {
     data: { name, email, nomor_handphone },
   });
   res.json({
+    status: 'OK',
     message: 'User created successfully',
     data: user,
   });
@@ -25,6 +26,7 @@ app.post('/users', async (req, res) => {
 app.get('/users', async (req, res) => {
   const users = await prisma.user.findMany();
   res.json({
+    status: 'OK',
     message: 'Users fetched successfully',
     data: users,
   });
